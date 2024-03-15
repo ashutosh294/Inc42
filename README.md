@@ -117,7 +117,15 @@ Configure volumes to persist data if required. For example, for the WordPress se
 
 
 ## CI/CD Pipeline Extension:
-Define Deployment Stages:
+
+1. Within each component's CI/CD workflow file, define separate jobs for building, testing, and deploying.
+2. Use the needs keyword to ensure that deployment jobs wait for the build jobs to complete successfully before starting.
+3. Ensure that deployment steps include commands or scripts to deploy the respective component to the staging environment.
+4. Adjust the deployment steps based on your specific deployment targets and procedures.
+5. Test the CI/CD pipelines thoroughly to ensure that deployments to the staging environment are triggered automatically upon successful builds.
+6. By following these steps, you'll extend your CI/CD pipelines to include deployment stages for the Go, Next.js, and WordPress components, and set up automatic deployment to a staging environment for successful builds.
+
+## Define Deployment Stages:
 
     -Extend the existing CI/CD pipelines in each component's workflow file (go-ci.yml, nextjs-ci.yml, wordpress-ci.yml) to include deployment stages.
     -Set Up Deployment Targets:
@@ -127,6 +135,6 @@ Define Deployment Stages:
     
 Automatic Deployment:
     -Configure the CI pipeline to automatically trigger deployment to the staging environment upon successful builds.
-## Additional Information
 
-Add any additional information or instructions relevant to your project here.
+
+## End
