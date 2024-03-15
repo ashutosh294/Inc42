@@ -1,4 +1,4 @@
-name: Go CI
+name: Go CI/CD
 
 on:
   push:
@@ -30,3 +30,15 @@ jobs:
 
     - name: Report test coverage
       run: go test -coverprofile=coverage.out ./... && go tool cover -func=coverage.out
+
+  deploy_staging:
+    needs: build
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        run: docker build -t your-go-image .
