@@ -1,0 +1,34 @@
+name: Go CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.17'
+
+    - name: Install dependencies
+      run: go mod download
+
+    - name: Lint
+      run: |
+        go get golang.org/x/lint/golint
+        golint ./...
+
+    - name: Test
+      run: go test ./...
+
+    - name: Report test coverage
+      run: go test -coverprofile=coverage.out ./... && go tool cover -func=coverage.out
