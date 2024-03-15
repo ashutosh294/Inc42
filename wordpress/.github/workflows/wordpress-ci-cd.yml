@@ -1,0 +1,39 @@
+name: WordPress CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Run PHPCS
+        run: phpcs --standard=WordPress .
+
+  deploy_staging:
+    needs: build
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+     
+
+      
