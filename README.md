@@ -11,6 +11,7 @@ Before you begin, ensure you have the following installed:
 - [npm](https://www.npmjs.com/)
 - [PHP](https://www.php.net/)
 - [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Components
 
@@ -54,6 +55,38 @@ The WordPress application is a content management system (CMS) written in PHP.
   - each component of web application enforces coding standards using the appropriate tools (PHPCS for WordPress, GolangCI-Lint for Go, ESLint and Prettier for 
     Next.js with TypeScript) and integrates these checks into their respective CI pipelines. Adjust the configurations and settings as needed based on your 
     project's specific requirements.
+
+
+    Docker Compose
+
+To spin up the entire extended application stack locally, follow these steps:
+
+1. **Clone the Repository:**
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. **Navigate to the Project Directory:**
+
+    ```bash
+    cd MyApp
+    ```
+
+3. **Run Docker Compose:**
+
+    Run the following command to start the entire application stack:
+
+    ```bash
+    docker-compose up
+    ```
+
+4. **Access the Applications:**
+
+    - Go Application: Visit `http://localhost:8080` in your web browser.
+    - Next.js Application: Visit `http://localhost:3000` in your web browser.
+    - WordPress Application: Visit `http://localhost:8081` in your web browser.
+
 
 
 ## Additional Information
