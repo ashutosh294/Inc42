@@ -51,7 +51,6 @@ Integrate GolangCI-Lint checks into the CI pipeline:
 
 ## add a step in the Go component's CI configuration file to run GolangCI-Lint:
 yaml
-Copy code
 jobs:
   build:
     steps:
@@ -59,8 +58,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Run GolangCI-Lint
         run: golangci-lint run
+        
+## Orchestration:
+Create or Modify Docker Compose File
+        
+## Continuous Deployment:
+Go Component:
 
-## Additional Information
+Create a workflow file in the .github/workflows/ directory of your Go component's repository.
+Name the file something descriptive like go-ci-cd.yml
 
-Add any additional information or instructions relevant to your Go application here.
+
+
 
