@@ -85,7 +85,9 @@ jobs:
       - name: Run Prettier
         run: npx prettier --check .
 
-## Additional Information
+## Continuous Deployment
+Next.js Component:
 
-Add any additional information or instructions relevant to your Next.js application here.
+ create a workflow file in the .github/workflows/ directory of your Next.js component's repository.
+Name the file something like nextjs-ci-cd.yml
 
