@@ -51,6 +51,9 @@ The WordPress application is a content management system (CMS) written in PHP.
   ### coding standard enforcement
   - **Linting and Coding Standards:** We use PHP_CodeSniffer (PHPCS) to enforce WordPress coding standards.
   - **CI Pipeline Integration:** PHPCS checks are integrated into the CI pipeline for the WordPress component.
+  - each component of web application enforces coding standards using the appropriate tools (PHPCS for WordPress, GolangCI-Lint for Go, ESLint and Prettier for 
+    Next.js with TypeScript) and integrates these checks into their respective CI pipelines. Adjust the configurations and settings as needed based on your 
+    project's specific requirements.
 
 
 ## Additional Information
