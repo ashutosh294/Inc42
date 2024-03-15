@@ -6,7 +6,7 @@ Welcome to MyApp! This project consists of independent components developed in G
 
 Before you begin, ensure you have the following installed:
 
-- Dockerhub (docker push abamrara/my-wordpress-site:tagname, docker push abamrara/my-nextjs-app:tagname)
+- Dockerhub https://hub.docker.com/repositories/abamrara (docker push abamrara/my-wordpress-site:tagname, docker push abamrara/my-nextjs-app:tagname)
 - [Go](https://golang.org/dl/)
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
