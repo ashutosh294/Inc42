@@ -49,7 +49,9 @@ jobs:
       - name: Run PHPCS
         run: phpcs --standard=WordPress .
 
-## Additional Information
+## Continuous Deployment
+WordPress Component:
 
-Add any additional information or instructions relevant to your WordPress application here.
+Create another workflow file in the .github/workflows/ directory of your WordPress component's repository.
+Name the file something like wordpress-ci-cd.yml
 
