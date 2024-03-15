@@ -2,7 +2,7 @@
 FROM golang:1.17-alpine
 
 # Set the working directory inside the container
-WORKDIR /go/src/app
+WORKDIR /go
 
 # Copy the local package files to the container's workspace
 COPY . .
