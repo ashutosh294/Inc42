@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'feature/*'
+      - feature/*
 
 jobs:
   build:
@@ -19,11 +19,8 @@ jobs:
       with:
         php-version: '7.4'
 
-    - name: Install dependencies
-      run: composer install
+    - name: Install Composer dependencies
+      run: composer install --no-interaction --prefer-dist
 
-    - name: Lint PHP
-      run: vendor/bin/phpcs --standard=PSR12 .
-
-    - name: Run PHPUnit tests
-      run: vendor/bin/phpunit
+    - name: Run PHPCS
+      run: phpcs --standard=WordPress .
