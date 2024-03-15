@@ -58,6 +58,33 @@ Before you begin, ensure you have the following installed:
 
     You can now access your Next.js application by navigating to `http://localhost:3000` in your web browser.
 
+
+##   Install ESLint and Prettier:
+
+Install ESLint and Prettier along with their necessary plugins for TypeScript in your Next.js project:
+
+- npm install eslint prettier eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser --save-dev
+- npm install --save-dev --save-exact prettier
+
+## Configure ESLint and Prettier for TypeScript coding standards:
+
+Create an .eslintrc.js file in your Next.js project root and configure ESLint rules according to your preferences.
+Create a .prettierrc file to configure Prettier formatting rules.
+Integrate ESLint and Prettier checks into the CI pipeline:
+
+Add a step in the Next.js component's CI configuration file to run ESLint and Prettier:
+yaml
+
+jobs:
+  build:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run ESLint
+        run: npx eslint .
+      - name: Run Prettier
+        run: npx prettier --check .
+
 ## Additional Information
 
 Add any additional information or instructions relevant to your Next.js application here.
