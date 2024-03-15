@@ -57,36 +57,63 @@ The WordPress application is a content management system (CMS) written in PHP.
     Next.js with TypeScript) and integrates these checks into their respective CI pipelines. Adjust the configurations and settings as needed based on your 
     project's specific requirements.
 
+## Orchestration:
 
-    Docker Compose
+1. Update Docker Compose File:
+Create or Modify Docker Compose File:
 
-To spin up the entire extended application stack locally, follow these steps:
+2. If you don't have a docker-compose.yml file already, create one in the root directory of your project. If you already have one, open it for modification.
+Define Services:
+
+3. Add service definitions for each component (Go, Next.js, WordPress) in the Docker Compose file.
+Specify the necessary configurations such as container name, image, ports mapping, environment variables, volumes, etc.
+Link Services:
+
+4. Ensure that services are properly linked if they need to communicate with each other.
+Network Configuration:
+
+5. Set up networking configurations if services need to communicate over a shared network.
+Volumes Configuration:
+
+6. Configure volumes to persist data if required. For example, for the WordPress service, you might want to mount a volume for the WordPress data directory
+
+## To spin up the entire extended application stack locally, follow these steps:
 
 1. **Clone the Repository:**
-
-    ```bash
     git clone <repository-url>
-    ```
-
+    
 2. **Navigate to the Project Directory:**
-
-    ```bash
     cd MyApp
-    ```
-
+  
 3. **Run Docker Compose:**
 
     Run the following command to start the entire application stack:
 
-    ```bash
     docker-compose up
-    ```
+  
 
 4. **Access the Applications:**
 
     - Go Application: Visit `http://localhost:8080` in your web browser.
     - Next.js Application: Visit `http://localhost:3000` in your web browser.
     - WordPress Application: Visit `http://localhost:8081` in your web browser.
+  
+   Create or Modify Docker Compose File:
+
+If you don't have a docker-compose.yml file already, create one in the root directory of your project. If you already have one, open it for modification.
+Define Services:
+
+Add service definitions for each component (Go, Next.js, WordPress) in the Docker Compose file.
+Specify the necessary configurations such as container name, image, ports mapping, environment variables, volumes, etc.
+Link Services:
+
+Ensure that services are properly linked if they need to communicate with each other.
+Network Configuration:
+
+Set up networking configurations if services need to communicate over a shared network.
+Volumes Configuration:
+
+Configure volumes to persist data if required. For example, for the WordPress service, you might want to mount a volume for the WordPress data directory.
 
 
 ## CI/CD Pipeline Extension:
