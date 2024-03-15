@@ -6,6 +6,7 @@ Welcome to MyApp! This project consists of independent components developed in G
 
 Before you begin, ensure you have the following installed:
 
+- Dockerhub (docker push abamrara/my-wordpress-site:tagname, docker push abamrara/my-nextjs-app:tagname)
 - [Go](https://golang.org/dl/)
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
@@ -88,7 +89,17 @@ To spin up the entire extended application stack locally, follow these steps:
     - WordPress Application: Visit `http://localhost:8081` in your web browser.
 
 
+## CI/CD Pipeline Extension:
+Define Deployment Stages:
 
+    -Extend the existing CI/CD pipelines in each component's workflow file (go-ci.yml, nextjs-ci.yml, wordpress-ci.yml) to include deployment stages.
+    -Set Up Deployment Targets:
+
+    -Define deployment targets where each component will be deployed. This could be a staging server or environment.
+    -Ensure that you have the necessary credentials or access keys to deploy to these targets.
+    
+Automatic Deployment:
+    -Configure the CI pipeline to automatically trigger deployment to the staging environment upon successful builds.
 ## Additional Information
 
 Add any additional information or instructions relevant to your project here.
